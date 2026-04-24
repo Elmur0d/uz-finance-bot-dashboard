@@ -55,8 +55,8 @@ export default function TransactionsPage() {
             <option key={c.id} value={c.id}>{c.name}</option>
           ))}
         </select>
-        <input placeholder="From YYYY-MM-DD" value={filters.from} onChange={(e) => setFilters({ ...filters, from: e.target.value })} />
-        <input placeholder="To YYYY-MM-DD" value={filters.to} onChange={(e) => setFilters({ ...filters, to: e.target.value })} />
+        <input type="date" value={filters.from} onChange={(e) => setFilters({ ...filters, from: e.target.value })} />
+        <input type="date" value={filters.to} onChange={(e) => setFilters({ ...filters, to: e.target.value })} />
         <input placeholder="Search note" value={filters.search} onChange={(e) => setFilters({ ...filters, search: e.target.value })} />
       </div>
       {txns.length === 0 ? (
@@ -72,7 +72,7 @@ export default function TransactionsPage() {
             {txns.map((t) => (
               <tr key={t.id}>
                 <td>{t.id}</td>
-                <td>{editId === t.id ? <input value={draft.txn_date} onChange={(e) => setDraft({ ...draft, txn_date: e.target.value })} /> : t.txn_date}</td>
+                <td>{editId === t.id ? <input type="date" value={draft.txn_date} onChange={(e) => setDraft({ ...draft, txn_date: e.target.value })} /> : t.txn_date}</td>
                 <td>
                   {editId === t.id ? (
                     <select value={draft.type} onChange={(e) => setDraft({ ...draft, type: e.target.value })}>

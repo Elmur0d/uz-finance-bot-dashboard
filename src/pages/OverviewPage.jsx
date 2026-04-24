@@ -82,7 +82,7 @@ export default function OverviewPage() {
               </option>
             ))}
         </select>
-        <input placeholder="Date YYYY-MM-DD" value={form.txn_date} onChange={(e) => setForm({ ...form, txn_date: e.target.value })} />
+        <input type="date" value={form.txn_date} onChange={(e) => setForm({ ...form, txn_date: e.target.value })} />
         <input placeholder="Note" value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} />
         <button type="submit">Add</button>
       </form>
